@@ -15,12 +15,17 @@
       color: #d3c6aa;
       font-family: "JetBrains Mono", monospace;
       max-width: 712px;
-      padding: 1rem;
       margin: auto;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     header {
       color: #dbbc7f;
+    }
+    section {
+      flex: 1;
     }
 
     h1 {
@@ -33,19 +38,16 @@
 
     footer {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      position: fixed;
-      width: 100%;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
+      padding: 3rem 0;
+      flex-wrap: wrap;
     }
 
     a {
       color: #7fbbb3;
       text-decoration: none;
       margin: 0.25rem;
+      text-wrap: nowrap;
     }
 
     a:hover {
