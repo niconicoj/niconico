@@ -1,0 +1,57 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <title>niconico.io</title>
+  </head>
+  <style is:global>
+    @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&display=swap");
+
+    body {
+      background-color: #272e33;
+      color: #d3c6aa;
+      font-family: "JetBrains Mono", monospace;
+      max-width: 712px;
+      padding: 1rem;
+      margin: auto;
+    }
+
+    header {
+      color: #dbbc7f;
+    }
+
+    h1 {
+      color: #83c092;
+    }
+
+    b {
+      color: #d699b6;
+    }
+
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: fixed;
+      width: 100%;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    a {
+      color: #7fbbb3;
+      text-decoration: none;
+      margin: 0.25rem;
+    }
+
+    a:hover {
+      color: #d699b6;
+    }
+  </style>
+
+  <slot />
+</html>
