@@ -1,0 +1,56 @@
+name: CICD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - id: 'checkout'
+        uses: 'actions/checkout@v4'
+
+      - id: 'build'
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - run: bun install
+      - run: bun run build
+
+      - id: 'package'
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-artifact
+          path: dist
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist-artifact
+          path: dist
+
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v2'
+        with:
+          project_id: 'niconico-certbot'
+          workload_identity_provider: 'projects/118991447074/locations/global/workloadIdentityPools/github/providers/niconico'
+
+      - id: 'upload-files'
+        uses: 'google-github-actions/upload-cloud-storage@v2'
+        with:
+          path: 'dist'
+          destination: 'niconico-io'
+          parent: false
