@@ -54,3 +54,4 @@ jobs:
           path: 'dist'
           destination: 'niconico-io'
           parent: false
+          process_gcloudignore: false
