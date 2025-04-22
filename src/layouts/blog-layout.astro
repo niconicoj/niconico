@@ -1,0 +1,30 @@
+---
+import Layout from "./layout.astro";
+---
+
+<Layout>
+  <body
+    style="width: 100%;max-width: 60rem;margin: 0 auto;padding-bottom: 1rem;"
+  >
+    <header
+      style=" margin: 0; background-color: var(--green);height: 4rem; position: sticky; display: flex; align-items: center; justify-content: space-between;"
+    >
+      <a href="/posts">
+        <h1
+          style="color: var(--bg); margin: 0 0 0 1rem; font-weight: 900; font-family: 'jetBrains Mono', monospace;"
+        >
+          niconico:Blog
+        </h1>
+      </a>
+      <a
+        href="/"
+        style="color: var(--grey); font-weight: 900; font-size: 1.5rem; font-family: 'jetBrains Mono', monospace; margin-right: 1rem;"
+      >
+        about
+      </a>
+    </header>
+    <main>
+      <slot />
+    </main>
+  </body>
+</Layout>

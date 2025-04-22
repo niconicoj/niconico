@@ -1,14 +1,14 @@
 ---
-import Layout from "../components/Layout.astro";
+import Layout from "../layouts/layout.astro";
 ---
 
 <Layout>
-  <body>
-    <header>
+  <body style="">
+    <header style="font-family: 'JetBrains Mono', monospace; ">
       <h1>niconico.io</h1>
       <p>hello there !</p>
     </header>
-    <section>
+    <main style="font-family: 'JetBrains Mono', monospace;  flex: 1;">
       <p>
         I am a <b>full stack developer</b>. Throughout the years I've worked on
         e-commerce applications as well as insurances applications. The
@@ -36,9 +36,9 @@ import Layout from "../components/Layout.astro";
       </p>
       <br />
       <p>See you around :)</p>
-    </section>
-    <footer>
-      <a href="https://blog.niconico.io">[ Blog ]</a>
+    </main>
+    <footer style="font-family: 'JetBrains Mono', monospace;">
+      <a href="/posts">[ Blog ]</a>
       <a href="https://github.com/niconicoj">[ Github ]</a>
       <a href="https://gitlab.niconico.io/niconico">[ Gitlab ]</a>
       <a href="https://www.linkedin.com/in/nicolas-joulin-8b5a92166"

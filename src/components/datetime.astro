@@ -1,0 +1,16 @@
+---
+import dayjs from "dayjs";
+
+interface Props {
+  date: Date;
+}
+
+const date = dayjs(Astro.props.date);
+---
+
+<time
+  style="color: var(--grey); font-weight: 500; align-self: flex-end; font-family: 'JetBrains Mono', monospace;"
+  datetime={date.toISOString()}
+>
+  {date.toString()}
+</time>

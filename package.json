@@ -9,7 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.7.4"
+    "astro": "^5.7.4",
+    "dayjs": "^1.11.13"
   },
   "devDependencies": {
     "prettier": "^3.5.3",
