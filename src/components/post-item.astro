@@ -1,0 +1,29 @@
+---
+import Datetime from "../components/datetime.astro";
+import Divider from "../components/divider.astro";
+
+interface Props {
+  url: string;
+  title: string;
+  publishedAt: Date;
+  prelude: string;
+}
+
+const { url, title, publishedAt, prelude } = Astro.props;
+---
+
+<li>
+  <a href={url}>
+    <h2
+      style="color: var(--green); font-size: 1.5rem; font-weight: 700; font-family: 'JetBrains Mono', monospace; margin-bottom: 0; border: none; cursor: pointer;"
+    >
+      {title}
+    </h2>
+  </a>
+  <Datetime date={publishedAt} />
+  <p>{prelude}</p>
+  <div style="font-family: 'JetBrains Mono', monospace; color: var(--aqua);">
+    <a href={url}> Read more → </a>
+  </div>
+  <Divider />
+</li>
