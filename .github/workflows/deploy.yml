@@ -6,27 +6,6 @@ on:
       - main
 
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-
-    steps:
-      - id: 'checkout'
-        uses: 'actions/checkout@v4'
-
-      - id: 'build'
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
-      - run: bun install
-      - run: bun run build
-
-      - id: 'package'
-        uses: actions/upload-artifact@v4
-        with:
-          name: dist-artifact
-          path: dist
-
   deploy:
     name: Deploy
     needs: build
