@@ -6,6 +6,10 @@ on:
     branches:
       - main
 
+on: 
+  pull_request:
+    types: [opened, reopened]
+
 jobs:
   build:
     name: Build
