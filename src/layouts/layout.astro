@@ -1,0 +1,220 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <title>niconico.io</title>
+  </head>
+  <style is:global>
+    @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400..700&family=Montserrat&display=swap");
+    :root {
+      --bg: #272e33;
+      --grey: #4f5b58;
+      --grey-alt: #7a8478;
+      --fg: #d3c6aa;
+      --red: #e67e80;
+      --orange: #e69875;
+      --yellow: #dbbc7f;
+      --green: #a7c080;
+      --blue: #7fbbb3;
+      --aqua: #83c092;
+      --purple: #d699b6;
+
+      --max-width: 712px;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: "Montserrat", sans-serif;
+      max-width: var(--max-width);
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    @media screen and (max-width: 712px) {
+      main {
+        margin: 1rem;
+      }
+      header {
+        margin: 1rem;
+      }
+    }
+
+    header {
+      color: var(--yellow);
+    }
+
+    h1 {
+      color: var(--aqua);
+    }
+
+    b {
+      color: var(--purple);
+    }
+
+    footer {
+      display: flex;
+      justify-content: center;
+      padding: 3rem 0;
+      flex-wrap: wrap;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+      margin: 0.25rem;
+      text-wrap: nowrap;
+    }
+
+    a:hover {
+      color: var(--purple);
+    }
+
+    blockquote {
+      margin: 0 1rem 1rem;
+      padding-left: 1rem;
+      font-style: italic;
+      border-left: 2px solid #53605c;
+    }
+
+    code[class*="language-"],
+    pre[class*="language-"] {
+      color: var(--fg);
+      background: none;
+      font-family: "JetBrains Mono", monospace;
+      font-weight: normal;
+      font-size: 1em;
+      text-align: left;
+      white-space: pre;
+      word-spacing: normal;
+      word-break: normal;
+      word-wrap: normal;
+      line-height: 1.5;
+
+      -moz-tab-size: 4;
+      -o-tab-size: 4;
+      tab-size: 4;
+
+      -webkit-hyphens: none;
+      -moz-hyphens: none;
+      -ms-hyphens: none;
+      hyphens: none;
+    }
+
+    :not(pre) code {
+      font-family: "JetBrains Mono", monospace;
+      background: #21272c;
+      padding: 2px;
+      color: var(--yellow);
+      border-radius: 4px;
+    }
+
+    /* Code blocks */
+    pre[class*="language-"] {
+      padding: 1em;
+      margin: 0.5em 0;
+      overflow: auto;
+    }
+
+    :not(pre) > code[class*="language-"],
+    pre[class*="language-"] {
+      background: var(--bg);
+      border: 1px solid var(--grey);
+    }
+
+    /* Inline code */
+    :not(pre) > code[class*="language-"] {
+      padding: 0.1em;
+      border-radius: 0.3em;
+      white-space: normal;
+    }
+
+    .token.comment,
+    .token.block-comment,
+    .token.prolog,
+    .token.doctype,
+    .token.cdata {
+      color: var(--grey-alt);
+    }
+
+    .token.punctuation {
+      color: var(--fg);
+    }
+
+    .token.tag,
+    .token.attr-name,
+    .token.deleted {
+      color: var(--purple);
+    }
+
+    .token.namespace {
+      color: var(--orange);
+    }
+    .token.function-name {
+      color: var(--blue);
+    }
+
+    .token.boolean,
+    .token.function {
+      color: var(--green);
+    }
+
+    .token.number {
+      color: var(--purple);
+    }
+
+    .token.property,
+    .token.class-name,
+    .token.constant,
+    .token.symbol {
+      color: var(--yellow);
+    }
+
+    .token.selector,
+    .token.important,
+    .token.atrule,
+    .token.keyword,
+    .token.builtin {
+      color: var(--red);
+    }
+
+    .token.string,
+    .token.char,
+    .token.attr-value,
+    .token.regex,
+    .token.variable {
+      color: var(--green);
+    }
+
+    .token.parameter {
+      color: var(--blue);
+    }
+
+    .token.operator,
+    .token.entity,
+    .token.url {
+      color: var(--orange);
+    }
+
+    .token.important,
+    .token.bold {
+      font-weight: normal;
+    }
+    .token.italic {
+      font-style: italic;
+    }
+
+    .token.entity {
+      cursor: help;
+    }
+
+    .token.inserted {
+      color: var(--green);
+    }
+  </style>
+  <slot />
+</html>

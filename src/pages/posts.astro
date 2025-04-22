@@ -1,0 +1,32 @@
+---
+import BlogLayout from "../layouts/blog-layout.astro";
+import PostItem from "../components/post-item.astro";
+
+interface Post {
+  url: string;
+  frontmatter: {
+    title: string;
+    publishedAt: string;
+    prelude: string;
+  };
+}
+
+const posts = Object.values(
+  import.meta.glob("./posts/*.md", { eager: true }),
+) as Post[];
+---
+
+<BlogLayout>
+  <ul style="list-style: none; padding: 0; margin: 0;">
+    {
+      posts.map((post) => (
+        <PostItem
+          url={post.url}
+          title={post.frontmatter.title}
+          prelude={post.frontmatter.prelude}
+          publishedAt={new Date(post.frontmatter.publishedAt)}
+        />
+      ))
+    }
+  </ul>
+</BlogLayout>
