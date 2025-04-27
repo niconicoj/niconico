@@ -1,6 +1,6 @@
 ---
-import BlogLayout from "../layouts/blog-layout.astro";
-import PostItem from "../components/post-item.astro";
+import BlogLayout from "../../layouts/blog-layout.astro";
+import PostItem from "../../components/post-item.astro";
 
 interface Post {
   url: string;
@@ -12,7 +12,7 @@ interface Post {
 }
 
 const posts = Object.values(
-  import.meta.glob("./posts/*.md", { eager: true }),
+  import.meta.glob("./*.md", { eager: true }),
 ) as Post[];
 ---
 
